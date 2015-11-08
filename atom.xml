@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[Space of soGary]]></title>
-  
+  <subtitle><![CDATA[Let's Build Up Stark Industries]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://sogary.github.io/"/>
   <updated>2015-11-08T00:17:26.000Z</updated>
