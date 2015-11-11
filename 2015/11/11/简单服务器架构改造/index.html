@@ -67,7 +67,7 @@
 <meta property="og:image" content="http://7xo6cz.com1.z0.glb.clouddn.com/20151111/loadbalance.png">
 <meta property="og:image" content="http://7xo6cz.com1.z0.glb.clouddn.com/20151111/withfileserver.png">
 <meta property="og:image" content="http://7xo6cz.com1.z0.glb.clouddn.com/20151111/withmemory.png">
-<meta property="og:updated_time" content="2015-11-11T00:54:51.000Z">
+<meta property="og:updated_time" content="2015-11-11T00:57:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单服务器架构改造">
 <meta name="twitter:description" content="最近朋友需要做一个线上流量峰值很大的活动，第一天由于某段时间太多人并发访问，服务器性能到峰值就崩溃了。他用的是Disuz里面一个简单插件，之前是付钱让外面的人帮忙搭起来的。我那天晚上看了一下情况，然后我也达到疯值崩溃了。
@@ -286,8 +286,8 @@
       
         <span itemprop="articleBody"><p>最近朋友需要做一个线上流量峰值很大的活动，第一天由于某段时间太多人并发访问，服务器性能到峰值就崩溃了。他用的是Disuz里面一个简单插件，之前是付钱让外面的人帮忙搭起来的。我那天晚上看了一下情况，然后我也达到疯值崩溃了。</p>
 <p>他们在阿里云买了单台服务器，所有东西丢进去，把CPU，内存和网络资源调整得比较高。一台云服务器甚至比我做的一套框架还贵😂。为了避免高并发带来的系统崩溃，我开始帮他在现有的系统下改服务器架构。</p>
-<h2 id="单服务器">单服务器</h2><p>他们原来的部署逻辑是把所有的东西丢在同一台服务，然后把这台服务器的性能调高。显然这种小学生的做法只可以满足一些低并发的需求，几个人玩玩泥沙这样做是没问题的。但是，我朋友的活动有几十万人参与，而且有比较集中的峰值，这种架构显然不能撑起所有访问。</p>
 <a id="more"></a>
+<h2 id="单服务器">单服务器</h2><p>他们原来的部署逻辑是把所有的东西丢在同一台服务，然后把这台服务器的性能调高。显然这种小学生的做法只可以满足一些低并发的需求，几个人玩玩泥沙这样做是没问题的。但是，我朋友的活动有几十万人参与，而且有比较集中的峰值，这种架构显然不能撑起所有访问。</p>
 <p><img src="http://7xo6cz.com1.z0.glb.clouddn.com/20151111/singleserver.png" alt="singleserver"></p>
 <h2 id="负载均衡">负载均衡</h2><p>首先我把数据库进行了分离，业务处理与数据处理的分离有效减少服务器的计算和IO压力。云数据库本身的HA和定期备份比较有保证。这样数据本身可以安全的被隔离，而读写访问的压力也分离了。</p>
 <p>之后我用四台性能比前面提及到的单机低的云服务器，分别搭建了该系统。由于系统程序本身的局限性，我把业务逻辑和文件处理放在了一起，加上一个负载均衡做访问分发。由于Session同步问题，我使用了源IP访问的形式进行访问的分发。</p>
