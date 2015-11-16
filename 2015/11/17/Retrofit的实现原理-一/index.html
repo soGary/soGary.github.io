@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Java, Android, soGary, Gary, Yueme, Hexo, NexT" />
+  <meta name="keywords" content="Android,Network,Retrofit," />
 
 
 
@@ -55,15 +55,40 @@
 
 
 
-<meta name="description" content="Keep it simple and foolish.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Space of soGary">
-<meta property="og:url" content="http://sogary.github.io/index.html">
+<meta name="description" content="Retrofit框架实现的这么巧妙,虽然我们不需要再造一个轮子,但研究下轮子的实现还是很有帮助的。
+Retrofit有几个关键的地方：
+
+用户自定义的接口和接口方法.(由动态代理创建对象.)
+Converter转换器.(把response转换为一个具体的对象)
+注解的使用.
+
+先从API来看。
+1RestAdapter restAdapter = new RestAdapter.Builder()">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Retrofit的实现原理(一)">
+<meta property="og:url" content="http://sogary.github.io/2015/11/17/Retrofit的实现原理-一/index.html">
 <meta property="og:site_name" content="Space of soGary">
-<meta property="og:description" content="Keep it simple and foolish.">
+<meta property="og:description" content="Retrofit框架实现的这么巧妙,虽然我们不需要再造一个轮子,但研究下轮子的实现还是很有帮助的。
+Retrofit有几个关键的地方：
+
+用户自定义的接口和接口方法.(由动态代理创建对象.)
+Converter转换器.(把response转换为一个具体的对象)
+注解的使用.
+
+先从API来看。
+1RestAdapter restAdapter = new RestAdapter.Builder()">
+<meta property="og:updated_time" content="2015-11-16T23:28:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Space of soGary">
-<meta name="twitter:description" content="Keep it simple and foolish.">
+<meta name="twitter:title" content="Retrofit的实现原理(一)">
+<meta name="twitter:description" content="Retrofit框架实现的这么巧妙,虽然我们不需要再造一个轮子,但研究下轮子的实现还是很有帮助的。
+Retrofit有几个关键的地方：
+
+用户自定义的接口和接口方法.(由动态代理创建对象.)
+Converter转换器.(把response转换为一个具体的对象)
+注解的使用.
+
+先从API来看。
+1RestAdapter restAdapter = new RestAdapter.Builder()">
 
 
 
@@ -75,7 +100,7 @@
   };
 </script>
 
-  <title> Space of soGary </title>
+  <title> Retrofit的实现原理(一) | Space of soGary </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -106,9 +131,7 @@
 
 
 
-  <div class="container one-column 
-   page-home 
-">
+  <div class="container one-column page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -216,24 +239,9 @@
       <div class="main-inner">
         <div id="content" class="content">
           
-  <section id="posts" class="posts-expand">
 
+  <div id="posts" class="posts-expand">
     
-
-    
-    
-      
-      
-        
-        
-        
-      
-
-      
-    
-
-    
-      
 
   
   
@@ -253,10 +261,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2015/11/17/Retrofit的实现原理-一/" itemprop="url">
-                  Retrofit的实现原理(一)
-                </a>
+                Retrofit的实现原理(一)
               
             
           </h1>
@@ -296,10 +301,7 @@
       
 
       
-        
-          <span itemprop="articleBody">
-            
-              <p>Retrofit框架实现的这么巧妙,虽然我们不需要再造一个轮子,但研究下轮子的实现还是很有帮助的。</p>
+        <span itemprop="articleBody"><p>Retrofit框架实现的这么巧妙,虽然我们不需要再造一个轮子,但研究下轮子的实现还是很有帮助的。</p>
 <p>Retrofit有几个关键的地方：</p>
 <ul>
 <li>用户自定义的接口和接口方法.(由动态代理创建对象.)</li>
@@ -321,31 +323,50 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">MainThreadExecutor</span> <span class="keyword">implements</span> <span class="title">Executor</span> </span>&#123;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> Handler handler = <span class="keyword">new</span> Handler(Looper.getMainLooper()); <span class="comment">//关联主线程的Handler</span></span><br><span class="line"></span><br><span class="line"><span class="annotation">@Override</span> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">execute</span><span class="params">(Runnable r)</span> </span>&#123;</span><br><span class="line">handler.post(r);                                 <span class="comment">//提交到主线程执行</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">boolean</span> <span class="title">post</span><span class="params">(Runnable r)</span></span><br><span class="line"></span>&#123;</span><br><span class="line"><span class="keyword">return</span>  sendMessageDelayed(getPostMessage(r), <span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> Message <span class="title">getPostMessage</span><span class="params">(Runnable r)</span> </span>&#123;   <span class="comment">//把runnable封装到Message中.</span></span><br><span class="line">Message m = Message.obtain();</span><br><span class="line">m.callback = r;</span><br><span class="line"><span class="keyword">return</span> m;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-            
-          </span>
-        
+</span>
       
     </div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/Network/" rel="tag">#Network</a>
+          
+            <a href="/tags/Retrofit/" rel="tag">#Retrofit</a>
+          
+        </div>
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/11/简单服务器架构改造/" rel="next" title="简单服务器架构改造">
+                <i class="fa fa-chevron-left"></i> 简单服务器架构改造
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </article>
 
 
-    
 
-  </section>
-
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
         </div>
@@ -354,6 +375,14 @@
 
 
         
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/11/17/Retrofit的实现原理-一/"
+           data-title="Retrofit的实现原理(一)" data-url="http://sogary.github.io/2015/11/17/Retrofit的实现原理-一/">
+      </div>
+    
+  </div>
+
 
       </div>
 
@@ -374,8 +403,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" src="/uploads/avatar.JPG" alt="soGary" itemprop="image"/>
           <p class="site-author-name" itemprop="name">soGary</p>
@@ -463,6 +501,23 @@
       </section>
 
       
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
 
     </div>
   </aside>
@@ -549,6 +604,167 @@
   <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
 
   <script type="text/javascript" src="/js/bootstrap.js"></script>
 
