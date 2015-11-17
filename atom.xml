@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Let's Build Up Stark Industries]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://sogary.github.io/"/>
-  <updated>2015-11-16T23:40:40.000Z</updated>
+  <updated>2015-11-17T08:09:07.000Z</updated>
   <id>http://sogary.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://sogary.github.io/2015/11/17/Retrofit%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86-%E4%B8%80/"/>
     <id>http://sogary.github.io/2015/11/17/Retrofit的实现原理-一/</id>
     <published>2015-11-16T23:26:39.000Z</published>
-    <updated>2015-11-16T23:40:40.000Z</updated>
+    <updated>2015-11-17T08:09:07.000Z</updated>
     <content type="html"><![CDATA[<p>Retrofit框架实现的这么巧妙,虽然我们不需要再造一个轮子,但研究下轮子的实现还是很有帮助的。</p>
 <p>Retrofit有几个关键的地方：</p>
 <ul>
