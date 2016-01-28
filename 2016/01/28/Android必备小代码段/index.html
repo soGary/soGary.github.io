@@ -1,26 +1,286 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[Space of soGary]]></title>
-  <subtitle><![CDATA[Let's Build Up Stark Industries]]></subtitle>
-  <link href="/atom.xml" rel="self"/>
-  <link href="http://sogary.github.io/"/>
-  <updated>2016-01-28T06:05:00.000Z</updated>
-  <id>http://sogary.github.io/</id>
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
   
-  <author>
-    <name><![CDATA[soGary]]></name>
+    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android,Code," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Space of soGary" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="拨打电话1234public static void call(Context context, String phoneNumber) &amp;#123;context.startActivity(new Intent(Intent.ACTION_CALL,Uri.parse(&quot;tel:&quot; + phoneNumber)));&amp;#125;
+跳转至拨号界面1234public static void ca">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android必备小代码段">
+<meta property="og:url" content="http://sogary.github.io/2016/01/28/Android必备小代码段/index.html">
+<meta property="og:site_name" content="Space of soGary">
+<meta property="og:description" content="拨打电话1234public static void call(Context context, String phoneNumber) &amp;#123;context.startActivity(new Intent(Intent.ACTION_CALL,Uri.parse(&quot;tel:&quot; + phoneNumber)));&amp;#125;
+跳转至拨号界面1234public static void ca">
+<meta property="og:updated_time" content="2016-01-28T06:05:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android必备小代码段">
+<meta name="twitter:description" content="拨打电话1234public static void call(Context context, String phoneNumber) &amp;#123;context.startActivity(new Intent(Intent.ACTION_CALL,Uri.parse(&quot;tel:&quot; + phoneNumber)));&amp;#125;
+跳转至拨号界面1234public static void ca">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title> Android必备小代码段 | Space of soGary </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?52f1380893e4785fe9163b8f90326120";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Space of soGary</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Let's Build Up Stark Industries</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <form class="site-search-form">
+    <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+  </form>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'YYcdtgToxKdyHkntsWey','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
     
-  </author>
+
   
-  <generator uri="http://hexo.io/">Hexo</generator>
   
-  <entry>
-    <title><![CDATA[Android必备小代码段]]></title>
-    <link href="http://sogary.github.io/2016/01/28/Android%E5%BF%85%E5%A4%87%E5%B0%8F%E4%BB%A3%E7%A0%81%E6%AE%B5/"/>
-    <id>http://sogary.github.io/2016/01/28/Android必备小代码段/</id>
-    <published>2016-01-28T06:02:30.000Z</published>
-    <updated>2016-01-28T06:05:00.000Z</updated>
-    <content type="html"><![CDATA[<h4 id="拨打电话">拨打电话</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(Context context, String phoneNumber)</span> </span>&#123;</span><br><span class="line">context.startActivity(<span class="keyword">new</span> Intent(Intent.ACTION_CALL,</span><br><span class="line">Uri.parse(<span class="string">"tel:"</span> + phoneNumber)));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android必备小代码段
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-01-28T14:02:30+08:00" content="2016-01-28">
+              2016-01-28
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/28/Android必备小代码段/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/28/Android必备小代码段/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h4 id="拨打电话">拨打电话</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(Context context, String phoneNumber)</span> </span>&#123;</span><br><span class="line">context.startActivity(<span class="keyword">new</span> Intent(Intent.ACTION_CALL,</span><br><span class="line">Uri.parse(<span class="string">"tel:"</span> + phoneNumber)));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="跳转至拨号界面">跳转至拨号界面</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">callDial</span><span class="params">(Context context, String phoneNumber)</span> </span>&#123;</span><br><span class="line">context.startActivity(<span class="keyword">new</span> Intent(Intent.ACTION_DIAL,</span><br><span class="line">Uri.parse(<span class="string">"tel:"</span> + phoneNumber)));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h4 id="发送短信">发送短信</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sendSms</span><span class="params">(Context context, String phoneNumber, String content)</span> </span>&#123;</span><br><span class="line">Uri uri = Uri.parse(<span class="string">"smsto:"</span> + </span><br><span class="line">(TextUtils.isEmpty(phoneNumber) ? <span class="string">""</span> : phoneNumber));</span><br><span class="line">Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_SENDTO, uri);</span><br><span class="line">intent.putExtra(<span class="string">"sms_body"</span>, </span><br><span class="line">TextUtils.isEmpty(content) ? <span class="string">""</span> : content);</span><br><span class="line">context.startActivity(intent);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -56,166 +316,454 @@
 <blockquote>
 <p>来源：赵凯强（@裸奔的凯子哥）<br>链接：<a href="http://blog.csdn.net/zhaokaiqiang1992/article/details/44724057" target="_blank" rel="external">http://blog.csdn.net/zhaokaiqiang1992/article/details/44724057</a></p>
 </blockquote>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h4 id="拨打电话">拨打电话</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(Context context, String phoneNumber)</span> </span>&#123;</span><br><span class="line">context.startActivity(<span class="keyword">new</span> Intent(Intent.ACTION_CALL,</span><br><span class="line">Uri.parse(<span class="string">"tel:"</span> + phoneNumber)));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="跳转至拨号界面">跳转至拨号界面</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">callDial</span><span class="params">(Context context, String phoneNumber)</span> </span>&#123;</span><br><span class="line">context.startActivity(<span class="keyword">new</span> Intent(Intent.ACTION_DIAL,</span><br><span class="line">Uri.parse(<span class="string">"tel:"</span> + phoneNumber)));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/Code/" rel="tag">#Code</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/13/传统硬件厂商的体验/" rel="next" title="传统硬件厂商的体验">
+                <i class="fa fa-chevron-left"></i> 传统硬件厂商的体验
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
     
-    </summary>
+      <div class="ds-thread" data-thread-key="2016/01/28/Android必备小代码段/"
+           data-title="Android必备小代码段" data-url="http://sogary.github.io/2016/01/28/Android必备小代码段/">
+      </div>
     
-      <category term="Android" scheme="http://sogary.github.io/tags/Android/"/>
-    
-      <category term="Code" scheme="http://sogary.github.io/tags/Code/"/>
-    
-  </entry>
+  </div>
+
+
+      </div>
+
+      
+        
   
-  <entry>
-    <title><![CDATA[传统硬件厂商的体验]]></title>
-    <link href="http://sogary.github.io/2015/12/13/%E4%BC%A0%E7%BB%9F%E7%A1%AC%E4%BB%B6%E5%8E%82%E5%95%86%E7%9A%84%E4%BD%93%E9%AA%8C/"/>
-    <id>http://sogary.github.io/2015/12/13/传统硬件厂商的体验/</id>
-    <published>2015-12-13T06:23:31.000Z</published>
-    <updated>2015-12-13T06:25:35.000Z</updated>
-    <content type="html"><![CDATA[<p>适应一个新环境并不容易，虽然工作内容变化不会变化太大，但是跨行业必须要对所在行业领域进行深入了解才能做好看似一样的工作。就像同样是法务，在协助上市公司IPO法律资讯和普通公司的标签知识产权维护两种方向上，大致工作内容应该是差不多，也就是辅助和保证公司合法完成各项事项，但是对于行业的理解所偏重的细节就会差别很大。</p>
-<a id="more"></a>
-<h3 id="国家垄断通信运营商">国家垄断通信运营商</h3><p>国家垄断通信运营商其实也是在苦苦挣扎，整个体制决定了这种企业没有活力，但是也不会灭亡。互联网行业不断对运营商进行冲击，其实运营商有两条路可以走：一是大规模扩展和创新业务与互联网进行竞争，二是裁减缩窄业务更加专注于通信网络，扎实做好自己的价值。</p>
-<p>显而易见，骄傲的运营只会选择第一条路。他们新建了很多互联网公司，做App、电商和支付，直接与现有的互联网产品竞争。有钱就是任性，看他们什么时候能烧死自己。运营商为什么注定失败呢？其中有三点:</p>
-<ul>
-<li>运营商没有市场的触觉。运营商所有产品基本都是按照“上头”指示去做。这对领导者的要求非常高，而运营商的领导者并不是企业家，他们没有企业家的触觉，甚至对自身业务都不了解，他们只是政治家。</li>
-<li>运营商没有技术核心。运营商在技术上根本一点竞争力都没有，所有系统都是外包技术，甚至运营商的命根子通信技术也是外包。运营商根本不可能在技术上进行创新，去优化社会资源或者社会资源配置。</li>
-<li>运营商没有互联网运营经验。运营商的姿态一直是客户跟着运营商走，运营商说啥是啥，这种垄断经济使运营商根本不了解市场和客户。但是，互联网行业对用户体验和感知非常敏感，运营商无法做好。</li>
-</ul>
-<p>其实第二条路更适合运营商，通信一直是刚需而且是国家垄断的，扎扎实实做深入才是硬道理。但是，这条路会远离大众用户，淡出公众视野。</p>
-<h3 id="互联网企业">互联网企业</h3><p>互联网创业潮正在兴起，也正在衰落。千千万万的企业崛起，千千万万的企业倒闭。投身创业使我成长非常快。肩负一个公司的所有技术和公司的部分其他职能，在大环境中艰难生存，真是毕生难忘的经历。很可惜这家公司没有给我带来原始积累，但是增加了我自身的个人价值。</p>
-<p>互联网企业无疑是最有创新的企业。公司的年轻，员工的年轻和行业的年轻决定了这些企业非常有活力，能够带动社会前沿科技的革新。中国互联网公司和美国不一样，中国互联网公司很少在一个点上做到深度优化，大公司都会涉足各行各业以谋求稳步发展和减少试错风险。美国互联网企业很多都是集中精力把一个东西做到极致，例如苹果和特斯拉，这些企业所引领的变革才会引起社会的巨大进步。一个真正谋求创新的地方和一个追求利益的地方还是有所不同的。</p>
-<p>互联网创业公司非常浮躁，他们总是口号大但是没有做很多实事，或者说想做实事却不懂怎么去做。我们都太年轻太多东西要学，总有一天我们都会实现自己的梦想。大家都有要坚持的东西，也会有要放弃的东西，一个意志坚定的人从不会因为环境而妥协。一直被社会高估的互联网公司，泡沫终究会调整得与社会相匹配。我们回过头看会觉得自己真的可笑。</p>
-<h3 id="传统制造企业">传统制造企业</h3><p>传统制造业企业能够活到现在，一定会有原因。他们为社会提供价值，提供制造业的创新。传统制造业的生产效率非常高，因为他们拥有自身的一整套生产流程，基本不需要借助外接进行生产协助，只要外接物流和销售就可以使产品快速退出市场。我本以为大部分企业的行业和社会触觉都很敏锐，只是局限于庞大的管理生产系统而没办法快速适应市场。但是，我进入这个行业之后发觉并不是这样的。我觉得他们的管理导致某方面的触觉非常不敏感，他们能够在制造业本身范围内进行高效率运作，但是缺少对外界的敏感，而且做起创新来畏首畏尾，所以革新产品迟迟不会推出市场。</p>
-<p>传统企业喜欢埋头苦干的员工，喜欢一颗颗螺丝钉组装称为一个高效的团队，再加上传统企业低调而注重质量的不光鲜外表。当他们想涉足互联网领域的时候，很难吸引顶级人才。传统企业的团队气质很难进行创新，低调而沉稳的性格可以在本领域不断创新，但是一旦涉及到领域外就有点束手无策了。</p>
-<h3 id="总结">总结</h3><p>我本身热爱互联网，希望能在传统企业学习到更多的东西，帮助他们进入互联网领域，也帮助我自己实现自己的梦想。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>适应一个新环境并不容易，虽然工作内容变化不会变化太大，但是跨行业必须要对所在行业领域进行深入了解才能做好看似一样的工作。就像同样是法务，在协助上市公司IPO法律资讯和普通公司的标签知识产权维护两种方向上，大致工作内容应该是差不多，也就是辅助和保证公司合法完成各项事项，但是对于行业的理解所偏重的细节就会差别很大。</p>]]>
-    
-    </summary>
-    
-      <category term="Industry" scheme="http://sogary.github.io/tags/Industry/"/>
-    
-      <category term="Internet" scheme="http://sogary.github.io/tags/Internet/"/>
-    
-      <category term="Manufacturing" scheme="http://sogary.github.io/tags/Manufacturing/"/>
-    
-  </entry>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/uploads/avatar.JPG" alt="soGary" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">soGary</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">Keep it simple and foolish.</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-name">分类</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/soGary" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> github
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/soGary" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> weibo
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">Links</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.yueme.ren/yue.jsp" target="_blank">约么</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://gd.10086.cn/szshop/" target="_blank">深圳移动商城</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#拨打电话"><span class="nav-number">1.</span> <span class="nav-text">拨打电话</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#跳转至拨号界面"><span class="nav-number">2.</span> <span class="nav-text">跳转至拨号界面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#发送短信"><span class="nav-number">3.</span> <span class="nav-text">发送短信</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#唤醒屏幕并解锁"><span class="nav-number">4.</span> <span class="nav-text">唤醒屏幕并解锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#需要添加权限"><span class="nav-number">5.</span> <span class="nav-text">需要添加权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断当前App处于前台还是后台状态"><span class="nav-number">6.</span> <span class="nav-text">判断当前App处于前台还是后台状态</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断当前手机是否处于锁屏(睡眠)状态"><span class="nav-number"></span> <span class="nav-text">判断当前手机是否处于锁屏(睡眠)状态</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#判断当前是否有网络连接"><span class="nav-number">1.</span> <span class="nav-text">判断当前是否有网络连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断当前是否是WIFI连接状态"><span class="nav-number">2.</span> <span class="nav-text">判断当前是否是WIFI连接状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取当前设备宽高，单位px"><span class="nav-number">3.</span> <span class="nav-text">获取当前设备宽高，单位px</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取当前设备的IMEI，需要与上面的isPhone()一起使用"><span class="nav-number">4.</span> <span class="nav-text">获取当前设备的IMEI，需要与上面的isPhone()一起使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取当前设备的MAC地址"><span class="nav-number">5.</span> <span class="nav-text">获取当前设备的MAC地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取当前程序的版本号"><span class="nav-number">6.</span> <span class="nav-text">获取当前程序的版本号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#收集设备信息，用于信息统计分析"><span class="nav-number">7.</span> <span class="nav-text">收集设备信息，用于信息统计分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#是否有SD卡"><span class="nav-number">8.</span> <span class="nav-text">是否有SD卡</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动态隐藏软键盘"><span class="nav-number">9.</span> <span class="nav-text">动态隐藏软键盘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动态显示软键盘"><span class="nav-number">10.</span> <span class="nav-text">动态显示软键盘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动态显示或者是隐藏软键盘"><span class="nav-number">11.</span> <span class="nav-text">动态显示或者是隐藏软键盘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#主动回到Home，后台运行"><span class="nav-number">12.</span> <span class="nav-text">主动回到Home，后台运行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取状态栏高度"><span class="nav-number">13.</span> <span class="nav-text">获取状态栏高度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取状态栏高度＋标题栏(ActionBar)高度"><span class="nav-number">14.</span> <span class="nav-text">获取状态栏高度＋标题栏(ActionBar)高度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取MCC+MNC代码_(SIM卡运营商国家代码和运营商网络代码)"><span class="nav-number">15.</span> <span class="nav-text">获取MCC+MNC代码 (SIM卡运营商国家代码和运营商网络代码)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#返回移动网络运营商的名字"><span class="nav-number">16.</span> <span class="nav-text">返回移动网络运营商的名字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#返回移动终端类型"><span class="nav-number">17.</span> <span class="nav-text">返回移动终端类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断手机连接的网络类型(2G,3G,4G)"><span class="nav-number">18.</span> <span class="nav-text">判断手机连接的网络类型(2G,3G,4G)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断当前手机的网络类型(WIFI还是2,3,4G)"><span class="nav-number">19.</span> <span class="nav-text">判断当前手机的网络类型(WIFI还是2,3,4G)</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
   
-  <entry>
-    <title><![CDATA[Retrofit的实现原理(一)]]></title>
-    <link href="http://sogary.github.io/2015/11/17/Retrofit%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86-%E4%B8%80/"/>
-    <id>http://sogary.github.io/2015/11/17/Retrofit的实现原理-一/</id>
-    <published>2015-11-16T23:26:39.000Z</published>
-    <updated>2015-11-17T08:13:18.000Z</updated>
-    <content type="html"><![CDATA[<p>Retrofit框架实现的这么巧妙,虽然我们不需要再造一个轮子,但研究下轮子的实现还是很有帮助的。</p>
-<p>Retrofit有几个关键的地方：</p>
-<ul>
-<li>用户自定义的接口和接口方法.(由动态代理创建对象.)</li>
-<li>Converter转换器.(把response转换为一个具体的对象)</li>
-<li>注解的使用.</li>
-</ul>
-<p>先从API来看。</p>
-<a id="more"></a>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RestAdapter restAdapter = <span class="keyword">new</span> RestAdapter.Builder().setEndpoint(API_URL).build();</span><br></pre></td></tr></table></figure>
-<p>build()其内部实现是这样的:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> RestAdapter <span class="title">build</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (endpoint == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Endpoint may not be null."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    ensureSaneDefaults();</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> RestAdapter(endpoint, clientProvider, httpExecutor, </span><br><span class="line">        callbackExecutor, requestInterceptor, converter, profiler, </span><br><span class="line">        errorHandler, log, logLevel);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当用户没有设置自定义的converter，client， httpExecutor（http访问执行的线程只对异步的retrofit有效）， callBackExecutor（异步的callBack执行的线程），errorHandler，log， RequestInterceptor的时候，就会使用retrofit默认的配置。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">ensureSaneDefaults</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (converter == <span class="keyword">null</span>) &#123;</span><br><span class="line">        converter = Platform.get().defaultConverter();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (clientProvider == <span class="keyword">null</span>) &#123;</span><br><span class="line">        clientProvider = Platform.get().defaultClient();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (httpExecutor == <span class="keyword">null</span>) &#123;</span><br><span class="line">        httpExecutor = Platform.get().defaultHttpExecutor();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (callbackExecutor == <span class="keyword">null</span>) &#123;</span><br><span class="line">        callbackExecutor = Platform.get().defaultCallbackExecutor();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (errorHandler == <span class="keyword">null</span>) &#123;</span><br><span class="line">        errorHandler = ErrorHandler.DEFAULT;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (log == <span class="keyword">null</span>) &#123;</span><br><span class="line">        log = Platform.get().defaultLog();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (requestInterceptor == <span class="keyword">null</span>) &#123;</span><br><span class="line">        requestInterceptor = RequestInterceptor.NONE;</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Platform.java</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Platform PLATFORM = findPlatform();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> Platform <span class="title">get</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> PLATFORM;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> Platform <span class="title">findPlatform</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        Class.forName(<span class="string">"android.os.Build"</span>);<span class="comment">//只要android.os.Build的class可以正常找到,证明是在android平台</span></span><br><span class="line">        <span class="keyword">if</span> (Build.VERSION.SDK_INT != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> Android();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ClassNotFoundException ignored) &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (System.getProperty(<span class="string">"com.google.appengine.runtime.version"</span>) != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> AppEngine();   <span class="comment">//google的app Engine平台</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Base();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Retrofit的Android类继承了Platform，根据android的特性对配置项做了处理。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Android</span> <span class="keyword">extends</span> <span class="title">Platform</span> </span>&#123;</span><br><span class="line">    <span class="annotation">@Override</span> <span class="function">Converter <span class="title">defaultConverter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> GsonConverter(<span class="keyword">new</span> Gson());  <span class="comment">//默认的转换器是Gson</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Override</span> Client.<span class="function">Provider <span class="title">defaultClient</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">final</span> Client client;</span><br><span class="line">        <span class="keyword">if</span> (hasOkHttpOnClasspath()) &#123;  <span class="comment">//有okhttp的路径就使用 Okhttp</span></span><br><span class="line">            client = OkClientInstantiator.instantiate();</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (Build.VERSION.SDK_INT &lt; Build.VERSION_CODES.GINGERBREAD) &#123;</span><br><span class="line">            client = <span class="keyword">new</span> AndroidApacheClient(); <span class="comment">//没有okhttp,且版本小于2.3 使用HttpClient</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            client = <span class="keyword">new</span> UrlConnectionClient();  <span class="comment">//没有okhttp,且版本大于等于2.3 使用urlConnection.</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Client.Provider() &#123;</span><br><span class="line">            <span class="annotation">@Override</span> <span class="function"><span class="keyword">public</span> Client <span class="title">get</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> client;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Override</span> <span class="function">Executor <span class="title">defaultHttpExecutor</span><span class="params">()</span> </span>&#123;   <span class="comment">//网络访问执行的线程.</span></span><br><span class="line">        <span class="keyword">return</span> Executors.newCachedThreadPool(<span class="keyword">new</span> ThreadFactory() &#123;  <span class="comment">//一个cached的线程池.可以复用老线程且线程长时间不用会自动回收. 线程池中线程不够会生成新线程.</span></span><br><span class="line">            <span class="annotation">@Override</span> <span class="function"><span class="keyword">public</span> Thread <span class="title">newThread</span><span class="params">(<span class="keyword">final</span> Runnable r)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">                    <span class="annotation">@Override</span> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                        Process.setThreadPriority(THREAD_PRIORITY_BACKGROUND);    <span class="comment">//设置线程的优先级 为最低</span></span><br><span class="line">                        r.run();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;, RestAdapter.IDLE_THREAD_NAME);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Override</span> <span class="function">Executor <span class="title">defaultCallbackExecutor</span><span class="params">()</span> </span>&#123; <span class="comment">//异步执行的线程.</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> MainThreadExecutor();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Override</span> RestAdapter.<span class="function">Log <span class="title">defaultLog</span><span class="params">()</span> </span>&#123;  <span class="comment">//通过Log.d("Retrofit",String)打印log</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> AndroidLog(<span class="string">"Retrofit"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">hasOkHttpOnClasspath</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        Class.forName(<span class="string">"com.squareup.okhttp.OkHttpClient"</span>); <span class="comment">//是否可以找到OkHttpClient类.</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ClassNotFoundException ignored) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>可以发现上面默认的Http的Executor是一个线程池。<br>而CallBack的Executor是在主线程执行的。由绑定MainLooper的Handler提交到主线程执行。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">MainThreadExecutor</span> <span class="keyword">implements</span> <span class="title">Executor</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Handler handler = <span class="keyword">new</span> Handler(Looper.getMainLooper()); <span class="comment">//关联主线程的Handler</span></span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Override</span> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">execute</span><span class="params">(Runnable r)</span> </span>&#123;</span><br><span class="line">        handler.post(r);                                 <span class="comment">//提交到主线程执行</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">boolean</span> <span class="title">post</span><span class="params">(Runnable r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span>  sendMessageDelayed(getPostMessage(r), <span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> Message <span class="title">getPostMessage</span><span class="params">(Runnable r)</span> </span>&#123;   <span class="comment">//把runnable封装到Message中.</span></span><br><span class="line">    Message m = Message.obtain();</span><br><span class="line">    m.callback = r;</span><br><span class="line">    <span class="keyword">return</span> m;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Retrofit框架实现的这么巧妙,虽然我们不需要再造一个轮子,但研究下轮子的实现还是很有帮助的。</p>
-<p>Retrofit有几个关键的地方：</p>
-<ul>
-<li>用户自定义的接口和接口方法.(由动态代理创建对象.)</li>
-<li>Converter转换器.(把response转换为一个具体的对象)</li>
-<li>注解的使用.</li>
-</ul>
-<p>先从API来看。</p>]]>
-    
-    </summary>
-    
-      <category term="Android" scheme="http://sogary.github.io/tags/Android/"/>
-    
-      <category term="Network" scheme="http://sogary.github.io/tags/Network/"/>
-    
-      <category term="Retrofit" scheme="http://sogary.github.io/tags/Retrofit/"/>
-    
-  </entry>
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">soGary</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
   
-  <entry>
-    <title><![CDATA[简单服务器架构改造]]></title>
-    <link href="http://sogary.github.io/2015/11/11/%E7%AE%80%E5%8D%95%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9E%B6%E6%9E%84%E6%94%B9%E9%80%A0/"/>
-    <id>http://sogary.github.io/2015/11/11/简单服务器架构改造/</id>
-    <published>2015-11-11T00:51:42.000Z</published>
-    <updated>2015-11-11T01:10:48.000Z</updated>
-    <content type="html"><![CDATA[<p>最近朋友需要做一个线上流量峰值很大的活动，第一天由于某段时间太多人并发访问，服务器性能到峰值就崩溃了。他用的是Discuz里面一个简单插件，之前是付钱让外面的人帮忙搭起来的。我那天晚上看了一下情况，然后我也达到疯值崩溃了。</p>
-<p>他们在阿里云买了单台服务器，所有东西丢进去，把CPU，内存和网络资源调整得比较高。一台云服务器甚至比我做的一套框架还贵😂。为了避免高并发带来的系统崩溃，我开始帮他在现有的系统下改服务器架构。</p>
-<a id="more"></a>
-<h2 id="单服务器">单服务器</h2><p>他们原来的部署逻辑是把所有的东西丢在同一台服务，然后把这台服务器的性能调高。显然这种小学生的做法只可以满足一些低并发的需求，几个人玩玩泥沙这样做是没问题的。但是，我朋友的活动有几十万人参与，而且有比较集中的峰值，这种架构显然不能撑起所有访问。</p>
-<p><img src="http://7xo6cz.com1.z0.glb.clouddn.com/20151111/singleserver.png" alt="singleserver"></p>
-<h2 id="负载均衡">负载均衡</h2><p>首先我把数据库进行了分离，业务处理与数据处理的分离有效减少服务器的计算和IO压力。云数据库本身的HA和定期备份比较有保证。这样数据本身可以安全的被隔离，而读写访问的压力也分离了。</p>
-<p>之后我用四台性能比前面提及到的单机低的云服务器，分别搭建了该系统。由于系统程序本身的局限性，我把业务逻辑和文件处理放在了一起，加上一个负载均衡做访问分发。由于Session同步问题，我使用了源IP访问的形式进行访问的分发。</p>
-<p><img src="http://7xo6cz.com1.z0.glb.clouddn.com/20151111/loadbalance.png" alt="laodbalance"></p>
-<h2 id="文件服务器">文件服务器</h2><p>经过数据库分离和负载均衡，在峰值的时候我们发现速度有所改进，页面打开的时候很快有反应，但是图片加载非常慢，导致整体页面打开速度非常慢。通过服务器的参数对比，发现网络流量占用特别大，原因是图片没有集中存储进行独立分发，需要在四台服务器进行分发。当大量并发访问的时候，所有的流量都用于分发图片，没办法支撑起新的请求。</p>
-<p>我们立刻做了一个应急处理，我把所有服务器的带宽都动态调整到较大的最高值。而且，我发现大量图片占用的空间偏大，分发的时候严重占用带宽，就算缩小10倍也不会影响用户使用。所以，我让朋友把所有图片都缩小。最后利用这种方法听过去，活动顺利结束。</p>
-<p>由于这类活动会频繁举行，我想在空档期间把系统进行改造。把图片服务器分离出来，使用第三方对象存储进行图片访问和分发，例如现在很火的<a href="http://www.qiniu.com/" target="_blank" rel="external">七牛</a>。由于这种改造需求修改源码，所以日后开始开发的时候就需要考虑到这种情况。</p>
-<p><img src="http://7xo6cz.com1.z0.glb.clouddn.com/20151111/withfileserver.png" alt="withfileserver"></p>
-<h2 id="内存存储">内存存储</h2><p>到再下一步，网站比较多动态态数据更新频率不高，可以用内存存储进行纪录。而且对与网站访问，把Session统一存放也是比较好管理的。所以，增加内存存储能够帮助系统提升性能和可用性。有了内存存储能够提升部分访问速度，而且可以把负载均衡的分发改成轮询，使应用服务器的压力分配比较平均。</p>
-<p><img src="http://7xo6cz.com1.z0.glb.clouddn.com/20151111/withmemory.png" alt="withmemory"></p>
-<h2 id="总结">总结</h2><p>当我们做服务器架构的时候需要考虑大一点，不是把所有东西放在一台服务器上，然后把单台服务器性能提升就可以解决问题的。术业有专攻，不同的服务器完成不同的功能，通力合作，这样顺利才能完成大量任务。当然，要处理更大的业务量，这种架构肯定好快出现瓶颈，还有很多更加细节的优化需要注意。</p>
-<p>这里只是纪录我平时的一些工作或者一些想法，也会写一写自己对一些技术的理解，当然还会分享一些比较厉害的文章。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>最近朋友需要做一个线上流量峰值很大的活动，第一天由于某段时间太多人并发访问，服务器性能到峰值就崩溃了。他用的是Discuz里面一个简单插件，之前是付钱让外面的人帮忙搭起来的。我那天晚上看了一下情况，然后我也达到疯值崩溃了。</p>
-<p>他们在阿里云买了单台服务器，所有东西丢进去，把CPU，内存和网络资源调整得比较高。一台云服务器甚至比我做的一套框架还贵😂。为了避免高并发带来的系统崩溃，我开始帮他在现有的系统下改服务器架构。</p>]]>
-    
-    </summary>
-    
-      <category term="Framework" scheme="http://sogary.github.io/tags/Framework/"/>
-    
-      <category term="Server" scheme="http://sogary.github.io/tags/Server/"/>
-    
-  </entry>
   
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <link href="http://sogary.github.io/2015/11/09/hello-world/"/>
-    <id>http://sogary.github.io/2015/11/09/hello-world/</id>
-    <published>2015-11-09T07:38:12.000Z</published>
-    <updated>2015-11-09T07:38:12.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<a id="more"></a>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html">Writing</a></p>]]>
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://sogary.github.io/tags/Hexo/"/>
-    
-  </entry>
+
   
-</feed>
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"sogary"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>
