@@ -65,7 +65,7 @@
 <meta property="og:description" content="上篇文章我们已经了解了retrofit的RestAdapter adapter=new RestAdapter.Builder().setEndpoint(url).build()这段代码做了什么。
 现在有下面一个接口,1234interface SimplePOST&amp;#123;    @POST(&quot;/android&quot;)     Response getResponse();&amp;#125;
 这篇我们">
-<meta property="og:updated_time" content="2016-01-28T07:33:39.000Z">
+<meta property="og:updated_time" content="2016-01-28T07:36:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Retrofit的实现原理(二)">
 <meta name="twitter:description" content="上篇文章我们已经了解了retrofit的RestAdapter adapter=new RestAdapter.Builder().setEndpoint(url).build()这段代码做了什么。
@@ -290,9 +290,9 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> &lt;T&gt; <span class="function">T <span class="title">create</span><span class="params">(Class&lt;T&gt; service)</span> </span>&#123;</span><br><span class="line">    Utils.validateServiceClass(service);</span><br><span class="line">    <span class="keyword">return</span> (T) Proxy.newProxyInstance(service.getClassLoader(),</span><br><span class="line">        <span class="keyword">new</span> Class&lt;?&gt;[] &#123; service &#125;,      <span class="comment">//动态代理</span></span><br><span class="line">    <span class="keyword">new</span> RestHandler(getMethodInfoCache(service)));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> &lt;T&gt; <span class="function"><span class="keyword">void</span> <span class="title">validateServiceClass</span><span class="params">(Class&lt;T&gt; service)</span> </span>&#123;      </span><br><span class="line"><span class="comment">//确保create()参数是一个接口类型,且这个接口没有继承其他的接口.(使用动态代理的前提)</span></span><br><span class="line">    <span class="keyword">if</span> (!service.isInterface()) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(</span><br><span class="line">            <span class="string">"Only interface endpoint definitions are supported."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (service.getInterfaces().length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(</span><br><span class="line">            <span class="string">"Interface definitions must not extend other interfaces."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>可以发现adapter.create()方法的内部实现是利用动态代理生成了service接口的一个实现类。</p>
 <p>根据动态代理的原理. 可以得知调用实现类的方法其实就是调用InvocationtHandler的对应方法。</p>
-<p>这里简单介绍下动态代理。(关于动态代理的原理,可以参考其他博客的文章。)</p>
+<p>这里简单介绍下动态代理。(关于动态代理的原理，可以参考其他博客的文章。)</p>
 <p>委托类：被代理类即称为委托类。一般不直接调用委托类的方法,而是通过代理类来间接调用。</p>
-<p>假定有委托类A，通过动态代理生成了代理类B,生成的时候需要建立一个InvocationHandler H。 实际我们调用代理类B的方法时，方法内部调用的是H的invoke()方法。 而一般H的invoke方法会调用A的同名方法，这样就实现了代理类B功能。</p>
+<p>假定有委托类A，通过动态代理生成了代理类B，生成的时候需要建立一个InvocationHandler H。 实际我们调用代理类B的方法时，方法内部调用的是H的invoke()方法。 而一般H的invoke方法会调用A的同名方法，这样就实现了代理类B功能。</p>
 <p>虽然这里是运用了动态代理的技术。但是却和一般的动态代理不一样。 一般的动态代理的InvocationHandler应该通过构造函数中传入委托类A。然后在invoke方法中调用A的方法，但这里是没有委托类的。只是利用动态代理自动生成接口的实现类。</p>
 <p>因为java的动态代理是基于接口的，所以retrofit也要求用户自定义的也必须是一个接口。 </p>
 <p>注意invocationHandler的invoke()方法执行是在我们调用接口的方法的时候执行的。对于上面的代码就simplepost.getResponse()执行的时候。</p>
