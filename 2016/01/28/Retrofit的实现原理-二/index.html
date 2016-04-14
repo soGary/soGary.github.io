@@ -1,5 +1,11 @@
 <!doctype html>
-<html class="theme-next   use-motion ">
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -26,15 +32,13 @@
 
 
 
-  
-    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-  
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 
 
 
 <link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="Android,Network,Retrofit," />
@@ -48,7 +52,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
 
 
 
@@ -75,10 +79,16 @@
 
 
 <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Mist',
-    sidebar: 'post',
-    motion: true
+    sidebar: "post",
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
   };
 </script>
 
@@ -87,15 +97,6 @@
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
-    </a>
-  </div>
-<![endif]-->
   
 
 
@@ -113,7 +114,14 @@
 
 
 
-  <div class="container one-column page-post-detail">
+
+
+
+
+  
+  
+
+  <div class="container one-collumn  page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -142,7 +150,7 @@
   
 
   
-    <ul id="menu" class="menu menu-left">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
@@ -186,6 +194,16 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
       
     </ul>
   
@@ -193,11 +211,9 @@
   
     <div class="site-search">
       
-  
   <form class="site-search-form">
-    <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
-  </form>
-
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
 
 <script type="text/javascript">
   (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
@@ -219,8 +235,9 @@
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div id="content" class="content">
-          
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
     
@@ -251,7 +268,10 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2016-01-28T15:22:13+08:00" content="2016-01-28">
               2016-01-28
             </time>
@@ -272,18 +292,21 @@
 
           
 
+          
+          
+
         </div>
       </header>
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <span itemprop="articleBody"><p>上篇文章我们已经了解了retrofit的RestAdapter adapter=new RestAdapter.Builder().setEndpoint(url).build()这段代码做了什么。</p>
+        <p>上篇文章我们已经了解了retrofit的RestAdapter adapter=new RestAdapter.Builder().setEndpoint(url).build()这段代码做了什么。</p>
 <p>现在有下面一个接口,<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">SimplePOST</span></span>&#123;</span><br><span class="line">    <span class="annotation">@POST</span>(<span class="string">"/android"</span>) </span><br><span class="line">    <span class="function">Response <span class="title">getResponse</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>这篇我们就来了解下 SimplePOST simplePost= adapter.create(SimplePOST.class)的内部逻辑。</p>
 <a id="more"></a>
@@ -299,7 +322,13 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">RestHandler</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Map&lt;Method, RestMethodInfo&gt; methodDetailsCache;</span><br><span class="line"> </span><br><span class="line">    RestHandler(Map&lt;Method, RestMethodInfo&gt; methodDetailsCache) &#123;</span><br><span class="line">        <span class="comment">//一般的动态代理。InvocationHandler构造函数一般要传入委托类。</span></span><br><span class="line">        <span class="keyword">this</span>.methodDetailsCache = methodDetailsCache;</span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="annotation">@SuppressWarnings</span>(<span class="string">"unchecked"</span>) </span><br><span class="line">    <span class="annotation">@Override</span> <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, <span class="keyword">final</span> Object[] args)</span>  </span><br><span class="line">    <span class="comment">//动态代理的方法实现。调用委托类的方法，最终会调用invoke方法。</span></span><br><span class="line">    <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        <span class="comment">// If the method is a method from Object then defer to normal invocation.</span></span><br><span class="line">        <span class="keyword">if</span> (method.getDeclaringClass() == Object.class) &#123;</span><br><span class="line">            <span class="comment">//因为接口默认也继承Object。所以接口也有Object中的方法的。 如继承自Object如equals()方法</span></span><br><span class="line">            <span class="keyword">return</span> method.invoke(<span class="keyword">this</span>, args);  </span><br><span class="line">            <span class="comment">//这里需要注意下，这里调用的是invocationHandler(H)的方法.一般的动态代理这里应该是调用委托类(A)的方法。</span></span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// Load or create the details cache for the current method.</span></span><br><span class="line">    <span class="keyword">final</span> RestMethodInfo methodInfo = getMethodInfo(methodDetailsCache, method);  </span><br><span class="line">    <span class="comment">//把method和RestMethodInfo缓存起来。防止重复解析method。(把方法的注解，返回值，同步异步等信息都解析出来储存在RestMethodInfo中。)</span></span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span> (methodInfo.isSynchronous) &#123;  <span class="comment">//同步的方式。</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> invokeRequest(requestInterceptor, methodInfo, args);  </span><br><span class="line">        <span class="comment">//核心方法(网络访问)。可以看到retrofit的synchronous类型方法并不是子线程执行的。 所以在Android平台使用同步方式的retrofit的话要在子线程中。</span></span><br><span class="line">        &#125; <span class="keyword">catch</span> (RetrofitError error) &#123;</span><br><span class="line">            Throwable newError = errorHandler.handleError(error);</span><br><span class="line">            <span class="keyword">if</span> (newError == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(</span><br><span class="line">                <span class="string">"Error handler returned null for wrapped exception."</span>,  </span><br><span class="line">                <span class="comment">//自定义的ErrorHandler的hanleError()方法不能return null。</span></span><br><span class="line">               error);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">throw</span> newError;  </span><br><span class="line">            <span class="comment">//注意,同步的方式，当遇到错误的时候，会抛出一个RuntimeException。在Android下尽量不要使用同步的方式(因为RuntimeException是不提示用户主动捕捉的)。</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span> (httpExecutor == <span class="keyword">null</span> || callbackExecutor == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(</span><br><span class="line">            <span class="string">"Asynchronous invocation requires calling setExecutors."</span>);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span> (methodInfo.isObservable) &#123; <span class="comment">//rx的方式</span></span><br><span class="line">        <span class="keyword">if</span> (rxSupport == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (Platform.HAS_RX_JAVA) &#123;</span><br><span class="line">                rxSupport = <span class="keyword">new</span> RxSupport(httpExecutor, errorHandler, requestInterceptor);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(</span><br><span class="line">                    <span class="string">"Observable method found but no RxJava on classpath."</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> rxSupport.createRequestObservable(<span class="keyword">new</span> RxSupport.Invoker() &#123;</span><br><span class="line">            <span class="annotation">@Override</span> <span class="function"><span class="keyword">public</span> ResponseWrapper <span class="title">invoke</span><span class="params">(RequestInterceptor requestInterceptor)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> (ResponseWrapper) invokeRequest(requestInterceptor, methodInfo, args);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//同步, Observable方式都不是的话,肯定是异步的方式了。</span></span><br><span class="line">    <span class="comment">// Apply the interceptor synchronously, recording the interception so we can replay it later.</span></span><br><span class="line">    <span class="comment">// This way we still defer argument serialization to the background thread.</span></span><br><span class="line">    <span class="keyword">final</span> RequestInterceptorTape interceptorTape = <span class="keyword">new</span> RequestInterceptorTape();</span><br><span class="line">    requestInterceptor.intercept(interceptorTape);</span><br><span class="line">        </span><br><span class="line">    Callback&lt;?&gt; callback = (Callback&lt;?&gt;) args[args.length - <span class="number">1</span>];</span><br><span class="line">    httpExecutor.execute(<span class="keyword">new</span> CallbackRunnable(callback, callbackExecutor, errorHandler) &#123;  </span><br><span class="line">        <span class="comment">//可以看到在Android上异步方式是通过HttpExecutor执行的。是默认子线程执行的。 所以异步方式的retrofit不需要在子线程中执行。</span></span><br><span class="line">        <span class="annotation">@Override</span> <span class="function"><span class="keyword">public</span> ResponseWrapper <span class="title">obtainResponse</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> (ResponseWrapper) invokeRequest(interceptorTape, methodInfo, args);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>; <span class="comment">// Asynchronous methods should have return type of void.</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">/**</span><br><span class="line">* Execute an HTTP request.</span><br><span class="line">*</span><br><span class="line">* <span class="doctag">@return</span> HTTP response object of specified &#123;<span class="doctag">@code</span> type&#125; or &#123;<span class="doctag">@code</span> null&#125;.</span><br><span class="line">* <span class="doctag">@throws</span> RetrofitError if any error occurs during the HTTP request.</span><br><span class="line">*/</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Object <span class="title">invokeRequest</span><span class="params">(RequestInterceptor requestInterceptor,</span><br><span class="line">    RestMethodInfo methodInfo, Object[] args)</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    String url = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        methodInfo.init(); <span class="comment">// Ensure all relevant method information has been loaded.  ---&gt;保证method的参数，返回值，注解都解析完成。 可以得到网络访问的url，header，query，访问方式等信息。</span></span><br><span class="line"> </span><br><span class="line">        String serverUrl = server.getUrl();</span><br><span class="line">        RequestBuilder requestBuilder = <span class="keyword">new</span> RequestBuilder(serverUrl, methodInfo, converter);</span><br><span class="line">        requestBuilder.setArguments(args);</span><br><span class="line"> </span><br><span class="line">        requestInterceptor.intercept(requestBuilder);  <span class="comment">//在网络访问之前，执行拦截器的方法。 保证拦截器是最后起作用的。</span></span><br><span class="line"> </span><br><span class="line">        Request request = requestBuilder.build();</span><br><span class="line">        url = request.getUrl();</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span> (!methodInfo.isSynchronous) &#123;</span><br><span class="line">            <span class="comment">// If we are executing asynchronously then update the current thread with a useful name.</span></span><br><span class="line">        <span class="keyword">int</span> substrEnd = url.indexOf(<span class="string">"?"</span>, serverUrl.length());</span><br><span class="line">        <span class="keyword">if</span> (substrEnd == -<span class="number">1</span>) &#123;</span><br><span class="line">            substrEnd = url.length();</span><br><span class="line">        &#125;</span><br><span class="line">        Thread.currentThread().setName(THREAD_PREFIX</span><br><span class="line">            + url.substring(serverUrl.length(), substrEnd));</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span> (logLevel.log()) &#123;</span><br><span class="line">            <span class="comment">// Log the request data.</span></span><br><span class="line">            request = logAndReplaceRequest(<span class="string">"HTTP"</span>, request, args);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        Object profilerObject = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (profiler != <span class="keyword">null</span>) &#123;</span><br><span class="line">            profilerObject = profiler.beforeCall();</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">long</span> start = System.nanoTime();</span><br><span class="line">        Response response = clientProvider.get().execute(request);  </span><br><span class="line">        <span class="comment">//调用okHttp或者其他Client进行网络访问。并把返回的数据封装进retrofit的Response中。</span></span><br><span class="line">        <span class="keyword">long</span> elapsedTime = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - start);</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">int</span> statusCode = response.getStatus(); <span class="comment">//返回码</span></span><br><span class="line">        <span class="keyword">if</span> (profiler != <span class="keyword">null</span>) &#123;</span><br><span class="line">            RequestInformation requestInfo = getRequestInfo(serverUrl, methodInfo, request);</span><br><span class="line">            <span class="comment">//noinspection unchecked</span></span><br><span class="line">            profiler.afterCall(requestInfo, elapsedTime, statusCode, profilerObject);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span> (logLevel.log()) &#123;</span><br><span class="line">            <span class="comment">// Log the response data.</span></span><br><span class="line">            response = logAndReplaceResponse(url, response, elapsedTime);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        Type type = methodInfo.responseObjectType;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span> (statusCode &gt;= <span class="number">200</span> &amp;&amp; statusCode &lt; <span class="number">300</span>) &#123; <span class="comment">// 2XX == successful request   </span></span><br><span class="line">            <span class="comment">//返回码在200到300之间认为是一次成功的网络访问。</span></span><br><span class="line">            <span class="comment">// Caller requested the raw Response object directly.</span></span><br><span class="line">            <span class="keyword">if</span> (type.equals(Response.class)) &#123;                           </span><br><span class="line">                <span class="comment">//如果方法的返回值类型(封装在responseObjectType)是retrofit的Response的话。 那就不用converter转换。</span></span><br><span class="line">                <span class="keyword">if</span> (!methodInfo.isStreaming) &#123;</span><br><span class="line">                <span class="comment">// Read the entire stream and replace with one backed by a byte[].</span></span><br><span class="line">                response = Utils.readBodyToBytesIfNecessary(response);</span><br><span class="line">                &#125;</span><br><span class="line"> </span><br><span class="line">                <span class="keyword">if</span> (methodInfo.isSynchronous) &#123;  <span class="comment">//同步方式</span></span><br><span class="line">                    <span class="keyword">return</span> response;         </span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> ResponseWrapper(response, response); <span class="comment">//异步的时候返回的是这个。</span></span><br><span class="line">            &#125;</span><br><span class="line"> </span><br><span class="line">            TypedInput body = response.getBody();</span><br><span class="line">            <span class="keyword">if</span> (body == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (methodInfo.isSynchronous) &#123;</span><br><span class="line">                    <span class="comment">//① 结合下面的② ，</span></span><br><span class="line">                    <span class="comment">//返回值类型不同是因为invokeRequest()分别由2个不同的方法调用。</span></span><br><span class="line">                    <span class="comment">//①是由 invoke()调用的。</span></span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> ResponseWrapper(response, <span class="keyword">null</span>);</span><br><span class="line">                <span class="comment">//② 的情况是异步的。</span></span><br><span class="line">                <span class="comment">//是由callBack模式中的obtainResponse()中调用的。 </span></span><br><span class="line">                <span class="comment">//下面和上面的返回值类型不同的情况皆是如此</span></span><br><span class="line">            &#125;</span><br><span class="line"> </span><br><span class="line">            ExceptionCatchingTypedInput wrapped = <span class="keyword">new</span> ExceptionCatchingTypedInput(body);</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                Object convert = converter.fromBody(wrapped, type); </span><br><span class="line">                <span class="comment">//方法的返回值是非Response。那么由Converter把Response转换成对应的类型。</span></span><br><span class="line">                logResponseBody(body, convert);</span><br><span class="line">                <span class="keyword">if</span> (methodInfo.isSynchronous) &#123;</span><br><span class="line">                    <span class="keyword">return</span> convert;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> ResponseWrapper(response, convert);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (ConversionException e) &#123;</span><br><span class="line">                <span class="comment">// If the underlying input stream threw an exception, propagate that rather than</span></span><br><span class="line">                <span class="comment">// indicating that it was a conversion exception.</span></span><br><span class="line">                <span class="keyword">if</span> (wrapped.threwException()) &#123;</span><br><span class="line">                    <span class="keyword">throw</span> wrapped.getThrownException();</span><br><span class="line">                &#125;</span><br><span class="line"> </span><br><span class="line">                <span class="comment">// The response body was partially read by the converter. Replace it with null.</span></span><br><span class="line">                response = Utils.replaceResponseBody(response, <span class="keyword">null</span>);</span><br><span class="line"> </span><br><span class="line">                <span class="keyword">throw</span> RetrofitError.conversionError(url, response, converter, type, e);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        response = Utils.readBodyToBytesIfNecessary(response);</span><br><span class="line">        <span class="keyword">throw</span> RetrofitError.httpError(url, response, converter, type);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (RetrofitError e) &#123;</span><br><span class="line">        <span class="keyword">throw</span> e; <span class="comment">// Pass through our own errors.</span></span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        <span class="keyword">if</span> (logLevel.log()) &#123;</span><br><span class="line">            logException(e, url);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">throw</span> RetrofitError.networkError(url, e);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Throwable t) &#123;</span><br><span class="line">        <span class="keyword">if</span> (logLevel.log()) &#123;</span><br><span class="line">            logException(t, url);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">throw</span> RetrofitError.unexpectedError(url, t);</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (!methodInfo.isSynchronous) &#123;</span><br><span class="line">            Thread.currentThread().setName(IDLE_THREAD_NAME);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>对于上面的getMethodInfo()方法, 是把method信息提取出来,封装到RestMethodInfo中。 包括访问方式。Headers，path，参数，返回值等。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> RestMethodInfo <span class="title">getMethodInfo</span><span class="params">(Map&lt;Method, RestMethodInfo&gt; cache, Method method)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">synchronized</span> (cache) &#123;</span><br><span class="line">        RestMethodInfo methodInfo = cache.get(method);</span><br><span class="line">        <span class="keyword">if</span> (methodInfo == <span class="keyword">null</span>) &#123;                  </span><br><span class="line">            <span class="comment">//经典的逻辑，如果缓存中有就从缓存中拿，如果没有,就生成一个新的，并且放到缓存中。</span></span><br><span class="line">            methodInfo = <span class="keyword">new</span> RestMethodInfo(method);</span><br><span class="line">            cache.put(method, methodInfo);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> methodInfo;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">strong</span>&gt;</span>RestMethodInfo<span class="tag">&lt;/<span class="title">strong</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">RestMethodInfo</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> Method method;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">boolean</span> loaded = <span class="keyword">false</span>;   <span class="comment">//方法是否已经load过(解析过)</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">// Method-level details</span></span><br><span class="line">    <span class="keyword">final</span> ResponseType responseType;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">boolean</span> isSynchronous;      <span class="comment">//方法是同步还是异步</span></span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">boolean</span> isObservable;</span><br><span class="line">    Type responseObjectType;</span><br><span class="line">    RequestType requestType = RequestType.SIMPLE;</span><br><span class="line">    String requestMethod;</span><br><span class="line">    <span class="keyword">boolean</span> requestHasBody;</span><br><span class="line">    String requestUrl;           </span><br><span class="line">    Set&lt;String&gt; requestUrlParamNames;</span><br><span class="line">    String requestQuery;</span><br><span class="line">    List&lt;retrofit.client.Header&gt; headers;</span><br><span class="line">    String contentTypeHeader;</span><br><span class="line">    <span class="keyword">boolean</span> isStreaming;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">enum</span> ResponseType &#123;  <span class="comment">//方法的返回值是什么类型</span></span><br><span class="line">        VOID,                    <span class="comment">//void代表没有返回值，--&gt;异步的方式</span></span><br><span class="line">        OBSERVABLE,              <span class="comment">//rxjava</span></span><br><span class="line">        OBJECT                   <span class="comment">//方法的返回值是对象---&gt;同步的方式</span></span><br><span class="line">    &#125;</span><br><span class="line">    RestMethodInfo(Method method) &#123;</span><br><span class="line">        <span class="keyword">this</span>.method = method;</span><br><span class="line">        responseType = parseResponseType();</span><br><span class="line">        isSynchronous = (responseType == ResponseType.OBJECT);</span><br><span class="line">        isObservable = (responseType == ResponseType.OBSERVABLE);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">private</span> ResponseType <span class="title">parseResponseType</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Synchronous methods have a non-void return type.          </span></span><br><span class="line">        <span class="comment">//同步的方法有一个非void的返回值</span></span><br><span class="line">        <span class="comment">// Observable methods have a return type of Observable.</span></span><br><span class="line">        <span class="comment">//Observable的方法返回值类型应该是Observable</span></span><br><span class="line">        Type returnType = method.getGenericReturnType();</span><br><span class="line"> </span><br><span class="line">        <span class="comment">// Asynchronous methods should have a Callback type as the last argument.  </span></span><br><span class="line">        <span class="comment">//异步的方法最后一个方法的参数类型应该是Callback。</span></span><br><span class="line">        Type lastArgType = nul;</span><br><span class="line">        Class&lt;?&gt; lastArgClass = <span class="keyword">null</span>;</span><br><span class="line">        Type[] parameterTypes = method.getGenericParameterTypes();</span><br><span class="line">        <span class="keyword">if</span> (parameterTypes.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            Type typeToCheck = parameterTypes[parameterTypes.length - <span class="number">1</span>];</span><br><span class="line">            lastArgType = typeToCheck;</span><br><span class="line">            <span class="keyword">if</span> (typeToCheck <span class="keyword">instanceof</span> ParameterizedType) &#123;</span><br><span class="line">                typeToCheck = ((ParameterizedType) typeToCheck).getRawType();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (typeToCheck <span class="keyword">instanceof</span> Class) &#123;</span><br><span class="line">                lastArgClass = (Class&lt;?&gt;) typeToCheck;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">boolean</span> hasReturnType = returnType != <span class="keyword">void</span>.class;</span><br><span class="line">        <span class="keyword">boolean</span> hasCallback = lastArgClass != <span class="keyword">null</span> &amp;&amp; </span><br><span class="line">            Callback.class.isAssignableFrom(lastArgClass); <span class="comment">//如果有CallBack， CallBack只能是最后一个参数。</span></span><br><span class="line"> </span><br><span class="line">        <span class="comment">// Check for invalid configurations.</span></span><br><span class="line">        <span class="keyword">if</span> (hasReturnType &amp;&amp; hasCallback) &#123;                         </span><br><span class="line">            <span class="comment">//返回值是非void类型和方法有CallBack参数有且只能有一个满足</span></span><br><span class="line">            <span class="keyword">throw</span> methodError(</span><br><span class="line">                <span class="string">"Must have return type or Callback as last argument, not both."</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!hasReturnType &amp;&amp; !hasCallback) &#123;</span><br><span class="line">            <span class="keyword">throw</span> methodError(</span><br><span class="line">                <span class="string">"Must have either a return type or Callback as last argument."</span>);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span> (hasReturnType) &#123;</span><br><span class="line">            <span class="keyword">if</span> (Platform.HAS_RX_JAVA) &#123;</span><br><span class="line">                Class rawReturnType = Types.getRawType(returnType);</span><br><span class="line">                <span class="keyword">if</span> (RxSupport.isObservable(rawReturnType)) &#123;</span><br><span class="line">                returnType = RxSupport.getObservableType(returnType, rawReturnType);</span><br><span class="line">                responseObjectType = getParameterUpperBound((ParameterizedType) returnType);</span><br><span class="line">                <span class="keyword">return</span> ResponseType.OBSERVABLE;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            responseObjectType = returnType;</span><br><span class="line">            <span class="keyword">return</span> ResponseType.OBJECT;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        lastArgType = Types.getSupertype(lastArgType,</span><br><span class="line">            Types.getRawType(lastArgType), Callback.class);</span><br><span class="line">        <span class="keyword">if</span> (lastArgType <span class="keyword">instanceof</span> ParameterizedType) &#123;</span><br><span class="line">            responseObjectType = getParameterUpperBound((ParameterizedType) lastArgType);</span><br><span class="line">            <span class="keyword">return</span> ResponseType.VOID;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">throw</span> methodError(</span><br><span class="line">            <span class="string">"Last parameter must be of type Callback&lt;X&gt; or Callback&lt;? super X&gt;."</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">parsePath</span><span class="params">(String path)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//解析路径 如GET(string)，注意这里会对string进行判断,必须以"/"开头。所以不能是空字符串，如""</span></span><br><span class="line">        ...........</span><br><span class="line">    &#125;</span><br><span class="line">    List&lt;retrofit.client.Header&gt; parseHeaders(String[] headers) &#123; <span class="comment">//解析Headers注解。</span></span><br><span class="line">　　     ...........</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">parseParameters</span><span class="params">()</span> </span>&#123;   <span class="comment">//解析方法参数，如方法参数的@Header，@Query等。</span></span><br><span class="line">　　     ...........</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">parseMethodAnnotations</span><span class="params">()</span> </span>&#123; <span class="comment">//解析http方式。如GET()，POST()</span></span><br><span class="line">　　     ...........</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></span>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">RestMethodInfo</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> Method method;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">boolean</span> loaded = <span class="keyword">false</span>;   <span class="comment">//方法是否已经load过(解析过)</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">// Method-level details</span></span><br><span class="line">    <span class="keyword">final</span> ResponseType responseType;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">boolean</span> isSynchronous;      <span class="comment">//方法是同步还是异步</span></span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">boolean</span> isObservable;</span><br><span class="line">    Type responseObjectType;</span><br><span class="line">    RequestType requestType = RequestType.SIMPLE;</span><br><span class="line">    String requestMethod;</span><br><span class="line">    <span class="keyword">boolean</span> requestHasBody;</span><br><span class="line">    String requestUrl;           </span><br><span class="line">    Set&lt;String&gt; requestUrlParamNames;</span><br><span class="line">    String requestQuery;</span><br><span class="line">    List&lt;retrofit.client.Header&gt; headers;</span><br><span class="line">    String contentTypeHeader;</span><br><span class="line">    <span class="keyword">boolean</span> isStreaming;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">enum</span> ResponseType &#123;  <span class="comment">//方法的返回值是什么类型</span></span><br><span class="line">        VOID,                    <span class="comment">//void代表没有返回值，--&gt;异步的方式</span></span><br><span class="line">        OBSERVABLE,              <span class="comment">//rxjava</span></span><br><span class="line">        OBJECT                   <span class="comment">//方法的返回值是对象---&gt;同步的方式</span></span><br><span class="line">    &#125;</span><br><span class="line">    RestMethodInfo(Method method) &#123;</span><br><span class="line">        <span class="keyword">this</span>.method = method;</span><br><span class="line">        responseType = parseResponseType();</span><br><span class="line">        isSynchronous = (responseType == ResponseType.OBJECT);</span><br><span class="line">        isObservable = (responseType == ResponseType.OBSERVABLE);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">private</span> ResponseType <span class="title">parseResponseType</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Synchronous methods have a non-void return type.          </span></span><br><span class="line">        <span class="comment">//同步的方法有一个非void的返回值</span></span><br><span class="line">        <span class="comment">// Observable methods have a return type of Observable.</span></span><br><span class="line">        <span class="comment">//Observable的方法返回值类型应该是Observable</span></span><br><span class="line">        Type returnType = method.getGenericReturnType();</span><br><span class="line"> </span><br><span class="line">        <span class="comment">// Asynchronous methods should have a Callback type as the last argument.  </span></span><br><span class="line">        <span class="comment">//异步的方法最后一个方法的参数类型应该是Callback。</span></span><br><span class="line">        Type lastArgType = nul;</span><br><span class="line">        Class&lt;?&gt; lastArgClass = <span class="keyword">null</span>;</span><br><span class="line">        Type[] parameterTypes = method.getGenericParameterTypes();</span><br><span class="line">        <span class="keyword">if</span> (parameterTypes.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            Type typeToCheck = parameterTypes[parameterTypes.length - <span class="number">1</span>];</span><br><span class="line">            lastArgType = typeToCheck;</span><br><span class="line">            <span class="keyword">if</span> (typeToCheck <span class="keyword">instanceof</span> ParameterizedType) &#123;</span><br><span class="line">                typeToCheck = ((ParameterizedType) typeToCheck).getRawType();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (typeToCheck <span class="keyword">instanceof</span> Class) &#123;</span><br><span class="line">                lastArgClass = (Class&lt;?&gt;) typeToCheck;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">boolean</span> hasReturnType = returnType != <span class="keyword">void</span>.class;</span><br><span class="line">        <span class="keyword">boolean</span> hasCallback = lastArgClass != <span class="keyword">null</span> &amp;&amp; </span><br><span class="line">            Callback.class.isAssignableFrom(lastArgClass); <span class="comment">//如果有CallBack， CallBack只能是最后一个参数。</span></span><br><span class="line"> </span><br><span class="line">        <span class="comment">// Check for invalid configurations.</span></span><br><span class="line">        <span class="keyword">if</span> (hasReturnType &amp;&amp; hasCallback) &#123;                         </span><br><span class="line">            <span class="comment">//返回值是非void类型和方法有CallBack参数有且只能有一个满足</span></span><br><span class="line">            <span class="keyword">throw</span> methodError(</span><br><span class="line">                <span class="string">"Must have return type or Callback as last argument, not both."</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!hasReturnType &amp;&amp; !hasCallback) &#123;</span><br><span class="line">            <span class="keyword">throw</span> methodError(</span><br><span class="line">                <span class="string">"Must have either a return type or Callback as last argument."</span>);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span> (hasReturnType) &#123;</span><br><span class="line">            <span class="keyword">if</span> (Platform.HAS_RX_JAVA) &#123;</span><br><span class="line">                Class rawReturnType = Types.getRawType(returnType);</span><br><span class="line">                <span class="keyword">if</span> (RxSupport.isObservable(rawReturnType)) &#123;</span><br><span class="line">                returnType = RxSupport.getObservableType(returnType, rawReturnType);</span><br><span class="line">                responseObjectType = getParameterUpperBound((ParameterizedType) returnType);</span><br><span class="line">                <span class="keyword">return</span> ResponseType.OBSERVABLE;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            responseObjectType = returnType;</span><br><span class="line">            <span class="keyword">return</span> ResponseType.OBJECT;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        lastArgType = Types.getSupertype(lastArgType,</span><br><span class="line">            Types.getRawType(lastArgType), Callback.class);</span><br><span class="line">        <span class="keyword">if</span> (lastArgType <span class="keyword">instanceof</span> ParameterizedType) &#123;</span><br><span class="line">            responseObjectType = getParameterUpperBound((ParameterizedType) lastArgType);</span><br><span class="line">            <span class="keyword">return</span> ResponseType.VOID;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">throw</span> methodError(</span><br><span class="line">            <span class="string">"Last parameter must be of type Callback&lt;X&gt; or Callback&lt;? super X&gt;."</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">parsePath</span><span class="params">(String path)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//解析路径 如GET(string)，注意这里会对string进行判断,必须以"/"开头。所以不能是空字符串，如""</span></span><br><span class="line">        ...........</span><br><span class="line">    &#125;</span><br><span class="line">    List&lt;retrofit.client.Header&gt; parseHeaders(String[] headers) &#123; <span class="comment">//解析Headers注解。</span></span><br><span class="line">　　     ...........</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">parseParameters</span><span class="params">()</span> </span>&#123;   <span class="comment">//解析方法参数，如方法参数的@Header，@Query等。</span></span><br><span class="line">　　     ...........</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">parseMethodAnnotations</span><span class="params">()</span> </span>&#123; <span class="comment">//解析http方式。如GET()，POST()</span></span><br><span class="line">　　     ...........</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -345,12 +374,11 @@
   </div>
 
 
-        </div>
+          </div>
+          
 
-        
 
-
-        
+          
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/01/28/Retrofit的实现原理-二/"
@@ -360,10 +388,9 @@
   </div>
 
 
-      </div>
-
-      
+        </div>
         
+          
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -391,10 +418,12 @@
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/uploads/avatar.JPG" alt="soGary" itemprop="image"/>
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.JPG"
+               alt="soGary" />
           <p class="site-author-name" itemprop="name">soGary</p>
+          <p class="site-description motion-element" itemprop="description">Keep it simple and foolish.</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">Keep it simple and foolish.</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
@@ -403,19 +432,16 @@
             </a>
           </div>
 
-          <div class="site-state-item site-state-categories">
-            
-              <span class="site-state-item-count">0</span>
-              <span class="site-state-item-name">分类</span>
-              
-          </div>
+          
 
-          <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">10</span>
-              <span class="site-state-item-name">标签</span>
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
               </a>
-          </div>
+            </div>
+          
 
         </nav>
 
@@ -434,16 +460,18 @@
               <span class="links-of-author-item">
                 <a href="https://github.com/soGary" target="_blank">
                   
-                    <i class="fa fa-globe"></i> github
+                    <i class="fa fa-globe"></i>
                   
+                  github
                 </a>
               </span>
             
               <span class="links-of-author-item">
                 <a href="http://weibo.com/soGary" target="_blank">
                   
-                    <i class="fa fa-globe"></i> weibo
+                    <i class="fa fa-globe"></i>
                   
+                  weibo
                 </a>
               </span>
             
@@ -459,18 +487,21 @@
           </div>
         
 
-        <div class="links-of-author motion-element">
+        
+        <div class="links-of-blogroll motion-element">
           
-            <p class="site-author-name">Links</p>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.yueme.ren/yue.jsp" target="_blank">约么</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://gd.10086.cn/szshop/" target="_blank">深圳移动商城</a>
-              </span>
-            
+            <div class="links-of-blogroll-title">Links</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.yueme.ren/yue.jsp" target="_blank">约么</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://gd.10086.cn/szshop/" target="_blank">深圳移动商城</a>
+                </li>
+              
+            </ul>
           
         </div>
 
@@ -478,9 +509,6 @@
 
       
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator">
-            <i class="fa fa-angle-double-up"></i>
-          </div>
           <div class="post-toc">
             
               
@@ -489,9 +517,6 @@
               <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator">
-            <i class="fa fa-angle-double-down"></i>
-          </div>
         </section>
       
 
@@ -499,7 +524,8 @@
   </aside>
 
 
-      
+        
+      </div>
     </main>
 
     <footer id="footer" class="footer">
@@ -509,7 +535,7 @@
   &copy;  2015 - 
   <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
-    <i class="icon-next-heart fa fa-heart"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">soGary</span>
 </div>
@@ -530,16 +556,65 @@
       </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
   </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
 
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
   
   
 
   
-    
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
 
   
     
@@ -557,197 +632,21 @@
       || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
   </script>
-    
-     
 
-
+  
     
   
 
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
 
-
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
-
-
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
-
-
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
-
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
-
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
-
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
-      });
-
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
-    }
-
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
-    }
-
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
-
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
-
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
-
-          toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 1 : 0;
-      $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
-        }, 100);
-    }
-
-  });
-</script>
-
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
-
-    $('.sidebar-nav li').on('click', function () {
-      var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
-        return;
-      }
-
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
-
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
-        }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
-            .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
-              target.addClass(activePanelClassName);
-            });
-        });
-
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
-    });
-
-    $('.post-toc a').on('click', function (e) {
-      e.preventDefault();
-      var targetSelector = escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, 500);
-    });
-
-    // Expand sidebar on post detail page by default, when post has a toc.
-    motionMiddleWares.sidebar = function () {
-      var $tocContent = $('.post-toc-content');
-      if (CONFIG.sidebar === 'post') {
-        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-          displaySidebar();
-        }
-      }
-    };
-  });
-</script>
 
 
 
-  <script type="text/javascript" src="/js/bootstrap.js"></script>
-
+  
   
   
 
   
+
   
 
 </body>
