@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Let's Build Up Stark Industries]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://sogary.github.io/"/>
-  <updated>2016-01-28T07:36:16.000Z</updated>
+  <updated>2016-04-18T08:21:17.000Z</updated>
   <id>http://sogary.github.io/</id>
   
   <author>
@@ -13,6 +13,61 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[工作和生活的游戏化]]></title>
+    <link href="http://sogary.github.io/2016/04/18/%E5%B7%A5%E4%BD%9C%E5%92%8C%E7%94%9F%E6%B4%BB%E7%9A%84%E6%B8%B8%E6%88%8F%E5%8C%96/"/>
+    <id>http://sogary.github.io/2016/04/18/工作和生活的游戏化/</id>
+    <published>2016-04-18T08:19:21.000Z</published>
+    <updated>2016-04-18T08:21:17.000Z</updated>
+    <content type="html"><![CDATA[<p>今天会议的一个有趣的point，稍微记录一下：</p>
+<p>很多人人愿意花时间到游戏中却不愿意花时间去更加努力地工作。游戏在人的工作和生活中不是必需的，但是为什么它这么吸引人？</p>
+<p>简单来说有八大驱动力：</p>
+<ul>
+<li>史诗意义与使命感</li>
+<li>进步与成就感</li>
+<li>创意授权与反馈</li>
+<li>所有权与拥有感</li>
+<li>社交影响与关联性</li>
+<li>稀缺性与渴望</li>
+<li>未知性与好奇心</li>
+<li>损失与逃避心</li>
+</ul>
+<a id="more"></a>
+<p>人生如戏，戏如人生。我觉得支持我们活着、工作和生活肯定也是这八个驱动力，有一点不一样的是游戏可以删档重来，人生不可以。可以说游戏的试错成本比人生少得多，所以游戏中会可能出现更多的创新和奇怪的东西，而真实世界人们做事都会估算后果才行动，大部分人会用评估出来的最高“期望值”去行动。</p>
+<p>其实我们都活在游戏里面，规则的制定者叫政府，我们活在政府的法律规则下，所有人都不能打破这种规则，除非武装起义推翻政权，你成为了规则制定者。</p>
+<p>我们想创造一个规则调动起我们的用户，其实我们是在建立一个帝国，我们是政府组织，这涉及到各种各样的规则，但是我觉得可以用一些简单的数学公式去描绘整个帝国的输入输出关系。</p>
+<p>我们可以定义一个人在工作中的输入是时间TIME和技术Tech，每个人在社会中想得到的事物基本是钱MONEY、性SEX、爱好INTEREST和时间TIME。用户在使用我们系统的时候，会有以下的系统流程：</p>
+<p>TIME+Tech (INPUT) –&gt; 系统 –&gt; MONEY+SEX+INTEREST+TIME (OUTPUT)</p>
+<p>我们可以计算用户投入期望和输出期望（期望这里是一个数学概念，我们不需要每次投入产出都按照下面规则，但是一段稍长时间的总体输入输出需要满足下面规则，不懂请百度）：</p>
+<p>IF OUTPUT &gt;= INPUT<br>THEN 用户会重复使用系统<br>ELSE 用户觉得系统是坑爹的永远不会再来</p>
+<p>我们可以用数据来标准杯INPUT和OUTPUT。INPUT简单来说可以是用户的时薪，每个用户都会有工资或者每年的产出利润，划算成为时薪就可以是INPUT。OUTPUT的计算有主观性，除了MONEY和TIME可以计算，SEX和INTERST可以用大量数据做量化，但是不能主观计算。</p>
+<p>简单来说，一个用户投入时间和技术到系统，他肯定会期望得到些什么，我们可以提供SEX、MONEY、INTEREST和TIME，通俗来说，平台可以给他YP、赚钱、得到创意和在别的地方省了时间。我们可以用大量的数据来计算这个期望值。一个良性的输入输出系统就像金融系统，资本总是不断壮大的，因为人类的总体生产价值在不断提高，如何做好一个游戏需要一整套想法，但是需要尽快行动以得到反馈。</p>
+<p>其实要看这个系统是否健康，就看这个期望值（OUTPUT-INPUT)是不是非负的，我们只要确保这个期望值是非负，用户就会拥戴我们，我们就可以慢慢建立起整个帝国。看似只是一个期望值，但是要做的东西可不是这么简单。</p>
+<p>努力吧～骚年。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>今天会议的一个有趣的point，稍微记录一下：</p>
+<p>很多人人愿意花时间到游戏中却不愿意花时间去更加努力地工作。游戏在人的工作和生活中不是必需的，但是为什么它这么吸引人？</p>
+<p>简单来说有八大驱动力：</p>
+<ul>
+<li>史诗意义与使命感</li>
+<li>进步与成就感</li>
+<li>创意授权与反馈</li>
+<li>所有权与拥有感</li>
+<li>社交影响与关联性</li>
+<li>稀缺性与渴望</li>
+<li>未知性与好奇心</li>
+<li>损失与逃避心</li>
+</ul>]]>
+    
+    </summary>
+    
+      <category term="Game" scheme="http://sogary.github.io/tags/Game/"/>
+    
+      <category term="Work" scheme="http://sogary.github.io/tags/Work/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Retrofit的实现原理(二)]]></title>
