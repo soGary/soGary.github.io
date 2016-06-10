@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Let's Build Up Stark Industries]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://sogary.github.io/"/>
-  <updated>2016-06-10T09:39:13.000Z</updated>
+  <updated>2016-06-10T09:40:26.000Z</updated>
   <id>http://sogary.github.io/</id>
   
   <author>
@@ -19,9 +19,10 @@
     <link href="http://sogary.github.io/2016/06/10/%E4%BA%9A%E6%B4%B2%E5%90%83%E9%9D%A2%E5%85%AC%E5%8F%B8%E7%9A%84Email/"/>
     <id>http://sogary.github.io/2016/06/10/亚洲吃面公司的Email/</id>
     <published>2016-06-10T09:38:31.000Z</published>
-    <updated>2016-06-10T09:39:13.000Z</updated>
+    <updated>2016-06-10T09:40:26.000Z</updated>
     <content type="html"><![CDATA[<h1 id="To:_亚洲吃面公司">To: 亚洲吃面公司</h1><h2 id="Title:_工作总结">Title: 工作总结</h2><h3 id="Content:">Content:</h3><p>Hi 吃面公司,</p>
 <p>由于我个人对公司理解的局限性，而且在公司的时间有限，<br>我只能以一个技术男的理工科思维去看待公司，<br>以自身和公司的利益去衡量我在公司期间的选择。<br>有很多地方会跟大家理解的不一样，<br>仅仅是想表达一下自己的想法，<br>站在我自己的角度去看这个公司。</p>
+<a id="more"></a>
 <h4 id="在我眼中这是一家怎样的公司">在我眼中这是一家怎样的公司</h4><p>这个公司主要分为三部分：</p>
 <ul>
 <li>公司所有资源的连接中心：痞子</li>
@@ -57,7 +58,8 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<h1 id="To:_亚洲吃面公司">To: 亚洲吃面公司</h1><h2 id="Title:_工作总结">Title: 工作总结</h2><h3 id="Content:">Content:</h3><p>Hi 吃面公司,</p>
-<p>由于我个人对公司理解的局限性，而且在]]>
+<p>由于我个人对公司理解的局限性，而且在公司的时间有限，<br>我只能以一个技术男的理工科思维去看待公司，<br>以自身和公司的利益去衡量我在公司期间的选择。<br>有很多地方会跟大家理解的不一样，<br>仅仅是想表达一下自己的想法，<br>站在我自己的角度去看这个公司。</p>]]>
+    
     </summary>
     
       <category term="Design" scheme="http://sogary.github.io/tags/Design/"/>
