@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Let's Build Up Stark Industries]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://sogary.github.io/"/>
-  <updated>2016-08-10T07:46:21.000Z</updated>
+  <updated>2016-08-10T07:47:46.000Z</updated>
   <id>http://sogary.github.io/</id>
   
   <author>
@@ -19,9 +19,10 @@
     <link href="http://sogary.github.io/2016/08/08/%E6%9F%90%E5%9B%BD%E9%99%85%E9%93%B6%E8%A1%8C%E5%BC%80%E5%8F%91%E4%B8%AD%E5%BF%83%E5%B7%A5%E4%BD%9C%E4%BD%93%E4%BC%9A/"/>
     <id>http://sogary.github.io/2016/08/08/某国际银行开发中心工作体会/</id>
     <published>2016-08-08T06:38:54.000Z</published>
-    <updated>2016-08-10T07:46:21.000Z</updated>
+    <updated>2016-08-10T07:47:46.000Z</updated>
     <content type="html"><![CDATA[<p>五月份开始在公司工作到现在，今天在网上看到一篇华为自省的<a href="https://mp.weixin.qq.com/s?__biz=MjM5ODIzNTc2MA==&amp;mid=2660757432&amp;idx=1&amp;sn=d72b38254d7da167bf76af9453519435&amp;scene=1&amp;srcid=0807JMH0sR0F43OnM3ImkJZh&amp;key=8dcebf9e179c9f3aed19604d55d87ae392f21738eee708871e5de308b07599145f5d2e7ff09ee0dca7014611d89aad3e&amp;ascene=0&amp;uin=MTYzMTA0Mjk4MA%3D%3D&amp;devicetype=iMac+MacBookPro11%2C2+OSX+OSX+10.12+build(16A270f)&amp;version=11020201&amp;pass_ticket=lbQBI%2FYT0xEPbDZM7%2BvOlKdBKKeZrvufiR8xlVmt7incnKzHuyV8OmhcJEZHDSkq" target="_blank" rel="external">文章</a>，感觉这公司有过之而无不及。文章我就不再累赘了，所有提到的点这里都有，而且技术更落后，管理更臃肿。</p>
 <p>银行业控制的技术公司一般都会有各种各样的问题，因为银行有强大的资本后盾做支撑，所有东西都需要把风险降到最低，在互联网飞速发展的时代，银行业的技术根本没可能跟上技术潮流，也没必要跟上技术潮流。资本的强大一方面给技术公司一个强大的后盾，也在另一方面拖了技术发展的后退。乌龟🐢拖着重重的壳怎么可能跑得快。</p>
+<a id="more"></a>
 <h5 id="这种技术公司是时代的产物，但是很快会消亡">这种技术公司是时代的产物，但是很快会消亡</h5><p>在计算机技术的蛮荒时代，主流技术掌握在少数公司手上，普通公司需要进入技术领域门槛和成本太高，外包定制技术和购买产品服务成为市场主流。经过一段时间的技术发展和普及，技术的使用门槛不断降低，大量人才的出现，除了爆发一批互联网公司之外，有实力的行业也开始增设自己的技术部门和技术子公司。这家银行的技术子公司应该就是这个时代的产物。计算机技术的普及使各种产业能够更好地提高生产力，使传统公司有一定程度的飞跃。</p>
 <p>计算机技术的发展速度简直是疯狂，不断有新技术颠覆和取代旧的技术，越来越多细分领域的出现对技术人才和公司管理的要求越来越高。要掌握新技术解放新的生产力，必须要随时调整公司策略。很多企业虽然有技术部门，但是一直固步自封，无办法自我颠覆，技术部门就会慢慢衰落。很多公司有自身的考虑，例如成本投入和风险控制等，颠覆总是无办法实现。时间越长，积累的问题会越来越多，旧的技术无办法满足新的需求和业务，最终可能会被抛弃或者推倒重来。华尔街很多资本巨头也在敬畏技术，但是资本的力量太大，华尔街和银行不会这么轻易倒闭，利用资本可以为自己翻身，买一个新的公司或者重新建立一个新的公司也不是大问题。</p>
 <p>虽然银行根本不用非常担心技术发展这类事情，但是考虑到受雇佣的我们自身，在这种旧技术的熏陶下，如果我们没能跟上时代的脚步，最终我们还是会被资本无情抛弃。</p>
@@ -34,7 +35,9 @@
 <p>有时候我们需要自私一点，公司总是会长远走下去的，但是你不一定能够跟着公司走下去。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>五月份开始在公司工作到现在，今天在网上看到一篇华为自省的<a href="https://mp.weixin.qq.com/s?__biz=MjM5ODIzNTc2MA==&amp;mid=2660757432&amp;idx=1&amp;sn=d72b38254d7da1]]>
+    <![CDATA[<p>五月份开始在公司工作到现在，今天在网上看到一篇华为自省的<a href="https://mp.weixin.qq.com/s?__biz=MjM5ODIzNTc2MA==&amp;mid=2660757432&amp;idx=1&amp;sn=d72b38254d7da167bf76af9453519435&amp;scene=1&amp;srcid=0807JMH0sR0F43OnM3ImkJZh&amp;key=8dcebf9e179c9f3aed19604d55d87ae392f21738eee708871e5de308b07599145f5d2e7ff09ee0dca7014611d89aad3e&amp;ascene=0&amp;uin=MTYzMTA0Mjk4MA%3D%3D&amp;devicetype=iMac+MacBookPro11%2C2+OSX+OSX+10.12+build(16A270f)&amp;version=11020201&amp;pass_ticket=lbQBI%2FYT0xEPbDZM7%2BvOlKdBKKeZrvufiR8xlVmt7incnKzHuyV8OmhcJEZHDSkq">文章</a>，感觉这公司有过之而无不及。文章我就不再累赘了，所有提到的点这里都有，而且技术更落后，管理更臃肿。</p>
+<p>银行业控制的技术公司一般都会有各种各样的问题，因为银行有强大的资本后盾做支撑，所有东西都需要把风险降到最低，在互联网飞速发展的时代，银行业的技术根本没可能跟上技术潮流，也没必要跟上技术潮流。资本的强大一方面给技术公司一个强大的后盾，也在另一方面拖了技术发展的后退。乌龟🐢拖着重重的壳怎么可能跑得快。</p>]]>
+    
     </summary>
     
       <category term="Banking" scheme="http://sogary.github.io/tags/Banking/"/>
